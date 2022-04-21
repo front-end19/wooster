@@ -1,0 +1,748 @@
+/* ==================================start variables====================================== */
+:root {
+    --cofee-color: #8B4513;
+    --section-background: #515D22;
+    --black-color: #1D1E22;
+    --p-color: #777;
+    --main-padding: 60px;
+}
+
+/* ==================================end variables======================================== */
+
+/* ----------------------------------start components------------------------------------- */
+a.common-btn {
+    color: #2F2C28;
+    text-transform: capitalize;
+    padding: 10px 20px;
+    display: block;
+    width: fit-content;
+    border: 2px solid var(--cofee-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+a.common-btn:hover {
+    background-color: var(--cofee-color);
+    color: #D3D3D3;
+}
+
+.special-heading {
+    font-weight: normal;
+    color: var(--black-color);
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.special-heading+p {
+    font-variant: small-caps;
+    font-size: 0.93rem;
+    color: var(--p-color);
+    position: relative;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.special-heading+p::before {
+    content: "";
+    background-color: var(--cofee-color);
+    position: absolute;
+    bottom: 0;
+    width: 140px;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+p.component-p {
+    width: 600px;
+    max-width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    text-align: center;
+    margin: 40px auto;
+}
+
+/* ----------------------------------end components--------------------------------------- */
+/* ==================================start global stayle================================ */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'work sans', 'sans-serif';
+}
+
+p {
+    color: var(--p-color);
+}
+
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* small screen */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* medium screen */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large screen */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* ======================================end global style=============================== */
+/* --------------------------------------start header----------------------------------- */
+header {
+    padding: 20px 0px;
+    position: absolute;
+    width: 100%;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .container>img {
+    width: 110px;
+}
+
+header .container nav ul {
+    width: 200px;
+    background-color: #f2f2f2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+}
+
+header .container nav ul a {
+    display: block;
+    padding: 20px;
+    color: var(--black-color, #1D1E22);
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+header .container nav ul a.active,
+header .container nav ul a:hover {
+    color: var(--cofee-color);
+}
+
+header .container nav i {
+    font-size: 20px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    color: var(--cofee-color);
+}
+
+header .container nav i:hover+ul {
+    display: block;
+}
+
+/* ------------------------------------------end header----------------------------------- */
+/* ========================================start landing================================ */
+.landing {
+    background-image: url("../images/header.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing .intro {
+    width: 400px;
+    text-align: center;
+}
+
+.landing .intro p {
+    padding: 10px 0px;
+    width: fit-content;
+    margin: auto;
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    color: var(--black-color, #1D1E22);
+}
+
+.landing .intro p>span {
+    color: var(--cofee-color, #8B4513);
+}
+
+.landing .intro h1 {
+    text-transform: capitalize;
+    font-weight: normal;
+    color: var(--black-color, #1D1E22);
+}
+
+.landing .intro a.common-btn {
+    margin: 20px auto 0px auto;
+}
+
+/* ========================================end landing================================== */
+/* ----------------------------------------start download------------------------------- */
+.download {
+    background-color: var(--section-background);
+    padding: 20px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.download>div {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media (max-width: 768px) {
+    .download>div {
+        flex-direction: column;
+        padding: 0px 10px;
+    }
+}
+
+.download>div p {
+    font-variant: small-caps;
+    width: 310px;
+    max-width: 100%;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .download>div p {
+        margin-bottom: 20px;
+        width: unset;
+    }
+}
+
+.download>div button {
+    padding: 10px;
+    font-variant: small-caps;
+    color: var(--black-color, #1D1E22);
+    font-size: 0.7rem;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .download>div button {
+        margin-left: 0px;
+        width: fit-content;
+    }
+}
+
+/* ----------------------------------------end download--------------------------------- */
+/* ========================================start our beginnig=========================== */
+.beginnig {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.beginnig .container h1.special-heading,
+.beginnig .container h1.special-heading+p {
+    text-align: left;
+}
+
+.beginnig .container h1.special-heading+p::before {
+    left: 0px;
+    transform: none;
+}
+
+.beginnig .container p::before {
+    width: 20px;
+    left: 0;
+}
+
+.beginnig .container .beginnig-content {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .beginnig .container .beginnig-content {
+        flex-direction: column;
+    }
+}
+
+.beginnig .container .beginnig-content .text {
+    flex-basis: 75%;
+}
+
+.beginnig .container .beginnig-content .text p {
+    color: var(--p-color);
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .beginnig .container .beginnig-content img {
+        width: 100%;
+    }
+}
+
+.beginnig .container .beginnig-content img {
+    flex-basis: 25%;
+    align-self: flex-start;
+    width: 300px;
+    box-shadow: 10px 10px 0px 0px var(--cofee-color);
+}
+
+@media (max-width: 768px) {
+    .beginnig .container .beginnig-content img {
+        width: 100%;
+        margin-top: 20px;
+        box-shadow: none;
+    }
+}
+
+.beginnig .container .beginnig-content .text p:first-of-type {
+    margin-top: 10px;
+}
+
+.beginnig .container .beginnig-content .text p:last-of-type {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+/* ========================================end our beginnig============================ */
+/* ----------------------------------------start video--------------------------------- */
+.video {
+    height: 400px;
+    background-image: url(../images/keyboard.jpg);
+    background-size: cover;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.video::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 81%);
+}
+
+.video>div {
+    position: relative;
+}
+
+.video>div p {
+    color: white;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    margin: 21px 0px;
+}
+
+.video>div i {
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+/* ----------------------------------------end video----------------------------------- */
+/* ========================================start portfolio============================= */
+.portfolio {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+@media (max-width: 468px) {
+    .portfolio .container .portfolio-nav ul {
+        flex-direction: column;
+        padding: 0px 10px;
+    }
+}
+
+.portfolio .container .portfolio-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 468px) {
+    .portfolio .container .portfolio-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .portfolio .container .portfolio-nav ul li {
+        width: 100%;
+    }
+}
+
+.portfolio .container .portfolio-nav ul li a.common-btn {
+    width: 100px;
+    margin-right: 10px;
+    text-align: center;
+    padding: 10px 0px;
+    border: 1px solid var(--cofee-color);
+    font-size: 0.78rem;
+}
+
+.portfolio .container .portfolio-nav ul li a.active {
+    width: 40px;
+    background-color: var(--cofee-color);
+    color: #D3D3D3;
+}
+
+@media (max-width: 468px) {
+
+    .portfolio .container .portfolio-nav ul li a.common-btn,
+    .portfolio .container .portfolio-nav ul li a.active {
+        width: 100%;
+        margin-bottom: 4px;
+    }
+}
+
+.portfolio .container .portfolio-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(275px, 1fr));
+    gap: 10px;
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.portfolio .container .portfolio-gallery img {
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.portfolio .container a.common-btn {
+    margin: auto;
+}
+
+/* ========================================end portfolio=============================== */
+/* ----------------------------------------start quote--------------------------------- */
+.quote {
+    height: 400px;
+    background-image: url('../images/coffe.jpg');
+    background-size: cover;
+    position: relative;
+    object-fit: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quote::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.quote div {
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.quote div i {
+    color: var(--black-color);
+    background-color: white;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.quote div q {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    display: block;
+    quotes: none;
+    margin-bottom: 40px;
+}
+
+.quote div p {
+    color: white;
+}
+
+/* ----------------------------------------end quote----------------------------------- */
+/* ========================================start about================================= */
+.about {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.about .container .about-team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+@media (max-width: 768px) {
+    .about .container .about-team {
+        padding-top: 0px;
+    }
+}
+
+.about .container .about-team div {
+    position: relative;
+    overflow: hidden;
+}
+
+.about .container .about-team img {
+    width: 100%;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.about .container .about-team .caption {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.884);
+    position: absolute;
+    padding: 4px;
+    text-align: center;
+    bottom: -100%;
+}
+
+.about .container .about-team .caption p:first-child {
+    color: white;
+    text-transform: capitalize;
+}
+
+.about .container .about-team .caption p:nth-child(2) {
+    font-variant: small-caps;
+}
+
+.about .container .about-team img:hover+.caption {
+    bottom: 0px;
+}
+
+.about .container .about-text {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.about .container .about-text div h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.about .container .about-text div h2::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: var(--cofee-color);
+}
+
+.about .container .about-text div p {
+    line-height: 1.6;
+}
+
+/* ========================================end about=================================== */
+/* ------------------------------------start subscribe--------------------------------- */
+.subscribe {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--section-background);
+}
+
+.subscribe div p {
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 0.87rem;
+}
+
+.subscribe div {
+    max-width: 600px;
+    margin: auto;
+}
+
+.subscribe .input-flex {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: auto;
+}
+
+.subscribe .input-flex input {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.822);
+}
+
+.subscribe .input-flex input::placeholder {
+    color: #d3d3d3bd;
+}
+
+.subscribe .input-flex input[type="email"] {
+    outline: none;
+    width: calc(100% - 130px);
+    background-color: var(--section-color);
+}
+
+.subscribe .input-flex input[type="submit"] {
+    width: 110px;
+    color: var(--black-color);
+    background-color: white;
+}
+
+/* ------------------------------------end subscribe----------------------------------- */
+/* ====================================start contact=================================== */
+.contact {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+}
+
+.contact .contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.contact .contact-info p {
+    font-size: 0.8rem;
+}
+
+.contact .contact-info i {
+    margin-bottom: 10px;
+    color: var(--cofee-color);
+    font-size: 1.7rem;
+}
+
+.contact form {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    display: flex;
+    justify-content: space-between
+}
+
+@media (max-width: 430px) {
+    .contact form {
+        flex-direction: column;
+    }
+}
+
+.contact form div.input-feild {
+    flex-basis: 50%;
+}
+
+.contact form input {
+    padding: 10px;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact form div:nth-child(2) {
+    flex-basis: 45%;
+}
+
+.contact form div:nth-child(2) textarea {
+    width: 100%;
+    padding: 10px;
+    height: calc(100% - 10px);
+}
+
+.contact form div:nth-child(2) textarea:focus,
+.contact form input:focus {
+    outline: 1px solid var(--cofee-color);
+    border: none;
+}
+
+.contact form div:nth-child(2) a.common-btn {
+    display: flex;
+    margin-left: auto;
+}
+
+/* ====================================end contact===================================== */
+/* ====================================start footer==================================== */
+footer {
+    padding: 30px 0px;
+    background-color: var(--section-background);
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .container div img {
+    width: 60px;
+    display: block;
+    margin: 0px auto 30px auto;
+}
+
+footer .container div i {
+    color: white;
+    margin-bottom: 20px;
+    display: block;
+}
+
+footer .container div i span {
+    margin-right: 10px;
+    -webkit-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+}
+
+footer .container div i span:hover{
+    color: var(--section-background);
+    background-color: #ffffff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+footer .container div p {
+    color: white;
+}
+
+/* ====================================end footer====================================== */
